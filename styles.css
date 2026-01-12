@@ -10,81 +10,104 @@ body {
   overflow-x: hidden;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* BACKGROUND SPLIT Logic */
+.bg-split {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  /* Right 45% of the screen */
+  height: 100%;
+  background-color: #eef4ff;
+  background-image: radial-gradient(#d0e0ff 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  z-index: -1;
+  /* Place behind everything */
+}
+
 /* NAVBAR */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
-  padding: 20px 80px;
+  padding: 40px 80px;
   position: relative;
   z-index: 10;
+  column-gap: 14px;
 }
 
-.logo {
+.logo-container {
   display: flex;
   align-items: center;
+  gap: 15px;
+}
+
+.logo-text {
+  font-size: 24px;
   font-weight: 800;
-  font-size: 22px;
-  gap: 10px;
+  color: #1a1a1a;
 }
 
 .navbar nav a {
   margin-left: 40px;
   text-decoration: none;
-  color: #666;
+  color: #888;
   font-weight: 500;
+  font-size: 18px;
 }
 
-/* MAIN LAYOUT */
-.main-layout {
+/* MAIN LAYOUT SPLIT */
+.main-content {
   display: flex;
-  min-height: 80vh;
+  padding: 0 12px 0 80px;
 }
 
 .hero-left {
   width: 55%;
-  padding: 60px 0 60px 80px;
+  padding-top: 40px;
 }
 
+.hero-right {
+  width: 736px;
+  display: flex;
+  justify-content: center;
+}
+
+/* TEXT STYLING */
 .hero-left h1 {
-  font-size: 72px;
+  font-size: 68px;
   line-height: 1.1;
   font-weight: 800;
   color: #1a1a1a;
-  position: relative;
 }
 
 .sparkle {
-  color: #ff8c42;
-  font-size: 40px;
+  border: 1px solid #ff8c42;
+  background: #ff8c42;
+  border-radius: 85px;
+  color: #ffffff;
 }
 
 .subtitle {
   margin: 25px 0;
-  color: #555;
+  color: #666;
   font-size: 16px;
   line-height: 1.6;
   max-width: 500px;
 }
 
 /* STUDENTS SECTION */
-/* .students-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 40px 0;
-} */
-
-/* .count-box {
-  display: flex;
-  flex-direction: column;
-} */
-
 .students-container {
   display: flex;
   align-items: center;
   gap: 25px;
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
 .students-text {
@@ -95,7 +118,6 @@ body {
 .students-text .count {
   font-size: 32px;
   font-weight: 800;
-  color: #333;
 }
 
 .students-text .sub-text {
@@ -110,44 +132,17 @@ body {
 }
 
 .stack-img {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 4px solid #fff; 
+  border: 4px solid #fff;
+  margin-left: -15px;
   object-fit: cover;
-  margin-left: -20px; 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-
 
 .stack-img:first-child {
   margin-left: 0;
 }
-
-.count {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.label {
-  font-size: 14px;
-  color: #666;
-}
-
-.student-avatars {
-  display: flex;
-}
-
-.s-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 3px solid white;
-  margin-left: -20px;
-  object-fit: cover;
-}
-
-.s-img:first-child { margin-left: 0; }
 
 /* ACTIONS */
 .actions {
@@ -159,7 +154,7 @@ body {
 .primary-btn {
   background: #2d4a43;
   color: #fff;
-  padding: 18px 40px;
+  padding: 16px 35px;
   border: none;
   border-radius: 50px;
   font-size: 18px;
@@ -175,7 +170,7 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .play-icon {
@@ -187,21 +182,10 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  padding-left: 4px;
+  padding-left: 3px;
 }
 
-/* RIGHT SECTION - GRID & PATTERN */
-.hero-right {
-  width: 45%;
-  background-color: #eef4ff; /* Light blue base */
-  background-image: radial-gradient(#d0e0ff 2px, transparent 2px); /* Simple pattern mimic */
-  background-size: 30px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-}
-
+/* AVATAR GRID */
 .avatar-grid {
   display: grid;
   grid-template-columns: repeat(2, 200px);
@@ -220,69 +204,49 @@ body {
   object-fit: cover;
 }
 
-/* UNIQUE SHAPES */
-.circle { border-radius: 50%; }
-.rounded { border-radius: 30px; }
+/* SHAPES */
+.circle {
+  border-radius: 50%;
+}
 
-/* The "Teardrop" or "Leaf" shapes */
+.rounded {
+  border-radius: 35px;
+}
+
 .organic-1 {
-  border-radius: 100px 100px 10px 100px;
+  border-radius: 95px 10px 10px 88px;
 }
 
 .organic-2 {
-  border-radius: 100px 10px 100px 100px;
+  border-radius: 10px 158px 10px 10px;
 }
 
-/* Background colors for avatars */
-.blue-bg { background: #47b2ff; }
-.purple-bg { background: #b194ff; }
-.tan-bg { background: #e9c496; }
-.yellow-bg { background: #ffdf6c; }
-.red-bg { background: #ff5232; }
-.darkblue-bg { background: #1e62d0; }
-
-/* STATS */
-.stats {
-  background: #ff914d;
-  display: flex;
-  padding: 60px 80px;
-  color: white;
+/* COLORS */
+.blue-bg {
+  background: #47b2ff;
 }
 
-.stat {
-  flex: 1;
-  border-left: 2px solid rgba(255,255,255,0.3);
-  padding-left: 40px;
+.purple-bg {
+  background: #b194ff;
 }
 
-.stat:first-child { border-left: none; }
-
-.stat h2 {
-  font-size: 50px;
-  margin-bottom: 5px;
+.tan-bg {
+  background: #e9c496;
 }
 
-/* NAVBAR ALIGNMENT */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 80px;
+.yellow-bg {
+  background: #ffdf6c;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.red-bg {
+  background: #ff5232;
 }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1a1a1a;
+.darkblue-bg {
+  background: #1e62d0;
 }
 
-/* THE CSS LOGO */
+/* LOGO (PURE CSS) */
 .custom-logo {
   position: relative;
   width: 40px;
@@ -295,7 +259,7 @@ body {
 .logo-dot {
   width: 8px;
   height: 8px;
-  background-color: #ff9257; /* Orange dot */
+  background-color: #ff9257;
   border-radius: 50%;
   margin-bottom: 4px;
 }
@@ -303,13 +267,11 @@ body {
 .logo-book {
   width: 38px;
   height: 28px;
-  background-color: #2f5d50; /* Dark green */
+  background-color: #2f5d50;
   border-radius: 4px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* This creates the "open book" notch at the bottom */
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
 }
 
@@ -318,15 +280,25 @@ body {
   font-size: 14px;
 }
 
-/* NAVBAR LINKS */
-nav a {
-  margin-left: 40px;
-  text-decoration: none;
-  color: #888; /* Muted grey from screenshot */
-  font-size: 18px;
-  transition: color 0.3s;
+/* STATS */
+.stats {
+  background: #ff914d;
+  display: flex;
+  padding: 60px 80px;
+  color: white;
 }
 
-nav a:hover {
-  color: #2f5d50;
+.stat {
+  flex: 1;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 40px;
+}
+
+/* .stat:first-child {
+  border-left: none;
+} */
+
+.stat h2 {
+  font-size: 52px;
+  margin-bottom: 5px;
 }
