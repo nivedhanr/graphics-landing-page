@@ -7,99 +7,210 @@
 
 body {
   background: #fff;
-  color: #222;
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
+  align-items: center;
+  padding: 20px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 22px;
+  gap: 10px;
 }
 
 .navbar nav a {
-  margin-left: 30px;
+  margin-left: 40px;
   text-decoration: none;
-  color: #555;
+  color: #666;
   font-weight: 500;
 }
 
-/* HERO */
-.hero {
+/* MAIN LAYOUT */
+.main-layout {
   display: flex;
-  padding: 60px;
+  min-height: 80vh;
 }
 
 .hero-left {
   width: 55%;
+  padding: 60px 0 60px 80px;
 }
 
 .hero-left h1 {
-  font-size: 64px;
-  line-height: 100%;
-  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.sparkle {
+  color: #ff8c42;
+  font-size: 40px;
 }
 
 .subtitle {
-  margin: 20px 0;
-  color: #666;
+  margin: 25px 0;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
   max-width: 500px;
-  font-weight: 400;
-  font-size: 17px;
 }
 
-.students {
-  margin: 20px 0;
+/* STUDENTS SECTION */
+/* .students-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0;
+} */
+
+/* .count-box {
+  display: flex;
+  flex-direction: column;
+} */
+
+.students-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.students-text {
   display: flex;
   flex-direction: column;
 }
 
-.students .count {
-  font-size: 28px;
-  font-weight: bold;
+.students-text .count {
+  font-size: 32px;
+  font-weight: 800;
+  color: #333;
 }
 
-/* BUTTONS */
+.students-text .sub-text {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.2;
+}
+
+.student-stack {
+  display: flex;
+  align-items: center;
+}
+
+.stack-img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 4px solid #fff; 
+  object-fit: cover;
+  margin-left: -20px; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+
+.stack-img:first-child {
+  margin-left: 0;
+}
+
+.count {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 14px;
+  color: #666;
+}
+
+.student-avatars {
+  display: flex;
+}
+
+.s-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-left: -20px;
+  object-fit: cover;
+}
+
+.s-img:first-child { margin-left: 0; }
+
+/* ACTIONS */
 .actions {
-  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .primary-btn {
-  background: #2f5d50;
+  background: #2d4a43;
   color: #fff;
-  padding: 14px 28px;
+  padding: 18px 40px;
   border: none;
-  border-radius: 30px;
-  font-size: 16px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .play-btn {
-  background: transparent;
+  background: none;
   border: none;
-  color: #ff8c42;
-  margin-left: 20px;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* RIGHT GRID */
+.play-icon {
+  background: #ff8c42;
+  color: white;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding-left: 4px;
+}
+
+/* RIGHT SECTION - GRID & PATTERN */
 .hero-right {
   width: 45%;
+  background-color: #eef4ff; /* Light blue base */
+  background-image: radial-gradient(#d0e0ff 2px, transparent 2px); /* Simple pattern mimic */
+  background-size: 30px 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
 .avatar-grid {
   display: grid;
-  grid-template-columns: repeat(2, 160px);
-  gap: 33px;
+  grid-template-columns: repeat(2, 200px);
+  gap: 25px;
 }
 
 .avatar {
-  height: 160px;
-  width: 160px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -109,43 +220,113 @@ body {
   object-fit: cover;
 }
 
-.circle {
-  border-radius: 50%;
+/* UNIQUE SHAPES */
+.circle { border-radius: 50%; }
+.rounded { border-radius: 30px; }
+
+/* The "Teardrop" or "Leaf" shapes */
+.organic-1 {
+  border-radius: 100px 100px 10px 100px;
 }
 
-.rounded {
-  border-radius: 20px;
+.organic-2 {
+  border-radius: 100px 10px 100px 100px;
 }
 
-.semiRoundLeft {
-  border-radius: 80px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.semiRoundRight {
-  border-radius: 124px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-
+/* Background colors for avatars */
+.blue-bg { background: #47b2ff; }
+.purple-bg { background: #b194ff; }
+.tan-bg { background: #e9c496; }
+.yellow-bg { background: #ffdf6c; }
+.red-bg { background: #ff5232; }
+.darkblue-bg { background: #1e62d0; }
 
 /* STATS */
 .stats {
-  background: #FF9257;
+  background: #ff914d;
   display: flex;
-  justify-content: space-around;
-  padding: 30px;
-  color: #fff;
+  padding: 60px 80px;
+  color: white;
 }
+
+.stat {
+  flex: 1;
+  border-left: 2px solid rgba(255,255,255,0.3);
+  padding-left: 40px;
+}
+
+.stat:first-child { border-left: none; }
 
 .stat h2 {
-  font-size: 56px;
-  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 5px;
 }
 
-.stat p {
-  margin-top: 6px;
+/* NAVBAR ALIGNMENT */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* THE CSS LOGO */
+.custom-logo {
+  position: relative;
+  width: 40px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff9257; /* Orange dot */
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+
+.logo-book {
+  width: 38px;
+  height: 28px;
+  background-color: #2f5d50; /* Dark green */
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* This creates the "open book" notch at the bottom */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+}
+
+.logo-sparkle {
+  color: white;
+  font-size: 14px;
+}
+
+/* NAVBAR LINKS */
+nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #888; /* Muted grey from screenshot */
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #2f5d50;
 }
